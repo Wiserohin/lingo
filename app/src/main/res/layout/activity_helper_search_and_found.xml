@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_found_profile"
+    tools:context=".activities.HelperSearchAndFound">
+
+    <com.skyfishjy.library.RippleBackground
+        android:id="@+id/helper_search_ripple"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/tb_helpee_found"
+        android:visibility="visible"
+        app:rb_color="#0099CC"
+        app:rb_duration="3000"
+        app:rb_radius="32dp"
+        app:rb_rippleAmount="2"
+        app:rb_scale="6"
+        tools:visibility="gone">
+
+        <ImageView
+            android:id="@+id/helper_search_rippled_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/logo_hq" />
+
+    </com.skyfishjy.library.RippleBackground>
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tb_helpee_found"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@android:color/transparent"
+        android:theme="@style/ActionBar.nameText"
+        android:visibility="visible"
+        app:popupTheme="@style/appBarOverlay"
+        app:title="Searching for helpee..."
+        tools:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/helpee_found_heading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tb_helpee_found"
+        android:fontFamily="@font/roboto"
+        android:gravity="center_horizontal"
+        android:text="Helpee Found!"
+        android:textColor="@color/white"
+        android:visibility="gone"
+        tools:visibility="visible"
+        android:textSize="36sp"
+        android:textStyle="bold" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_found_profile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/helpee_found_heading"
+        android:layout_margin="30dp"
+        android:backgroundTint="@color/transparent_white"
+        android:elevation="10dp"
+        android:visibility="gone"
+        app:cardCornerRadius="10dp"
+        tools:visibility="visible">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="20dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/found_helpee_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/roboto_extra_light"
+                android:gravity="center_horizontal"
+                android:textColor="@color/black"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                tools:text="Jeihan" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/helpee_found_picture"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_marginTop="15dp"
+                android:contentDescription="profile picture"
+                android:src="@drawable/logo_hq" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/roboto"
+                android:gravity="center_horizontal"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:text="Contact Info: " />
+
+            <TextView
+                android:id="@+id/found_helpee_contact"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_extra_light"
+                android:gravity="center_horizontal"
+                android:textColor="@color/blue_500"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:text="1234567890" />
+
+
+            <RelativeLayout
+                android:id="@+id/rl_button_set"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:layout_marginBottom="40dp"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/btn_direction_to_helpee"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="20dp"
+                    android:background="@color/green_500"
+                    android:src="@drawable/ic_location_red_24dp" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/btn_complete_help"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="20dp"
+                    android:layout_toEndOf="@+id/btn_direction_to_helpee"
+                    android:background="@color/blue_500"
+                    android:src="@drawable/ic_complete_white_36dp" />
+
+                <TextView
+                    android:layout_width="36dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/btn_direction_to_helpee"
+                    android:fontFamily="@font/roboto_extra_light"
+                    android:gravity="center"
+                    android:paddingStart="7dp"
+                    tools:text="Map " />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/btn_complete_help"
+                    android:layout_toEndOf="@id/btn_direction_to_helpee"
+                    android:fontFamily="@font/roboto_extra_light"
+                    android:paddingStart="7dp"
+                    tools:text="Complete" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>
